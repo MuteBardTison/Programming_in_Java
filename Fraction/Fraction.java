@@ -31,15 +31,16 @@ public class Fraction {
     }
     @Override
     public boolean equals(Object o) {
-        if ( o instanceof Fraction) {
+        if (o instanceof Fraction) {
+            if (o == this) return true;
             Fraction fraction2 = (Fraction) o;
-
+            if (reduce(fraction2).numerator == reduce(this).numerator 
+            && reduce(fraction2).denominator == reduce(this).denominator)
+                return true;
+            else return false;
         }
-        if (divide(this, (Fraction)o).numerator / divide(this, (Fraction)o).denominator 
-        == (int)(divide(this, (Fraction)o).numerator / divide(this, (Fraction)o).denominator)){
-            return true;
-        }
-        else return false;
+        else 
+            return false;
     }
     @Override
     public String toString() {
@@ -66,10 +67,12 @@ public class Fraction {
     public static void main(String[] args) {
         Fraction f1 = new Fraction(2, 3);
         Fraction f2 = new Fraction(4, 6);
+        Fraction f3 = new Fraction(3, 5);
         System.out.println(add(f1, f2));
         System.out.println(substract(f1, f2));
         System.out.println(multiply(f1, f2));
         System.out.println(divide(f1, f2));
         System.out.println(f1.equals(f2));
+        System.out.println(f2.equals(f3));
     }
 }
