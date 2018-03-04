@@ -1,12 +1,11 @@
 /**
  * This class represents a pet object
  * 
- * Naming accords to Google Java Style
- * 
  * @author Zihan Qi
+ * @author Sabin Bhandari
+ * @author Shikhat Karkee
+ * @author Temirlan Ulugbek uulu
  */
-
-package src;
 
 public class Pet{
     private String name;        // Name of pet

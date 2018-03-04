@@ -2,13 +2,11 @@
  * This class represents a driver for pet class
  * which test the functionalities of a pet instance
  * 
- * Naming accords to Google Java Style
- * 
  * @author Zihan Qi
+ * @author Sabin Bhandari
+ * @author Shikhat Karkee
+ * @author Temirlan Ulugbek uulu
  */
-
-package test;
-import src.Pet;
 
 public class PetDriver{
     /**
