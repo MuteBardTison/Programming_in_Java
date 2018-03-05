@@ -1,10 +1,12 @@
 /**
- * This class represents a pet object
- * 
- * @author Zihan Qi
  * @author Sabin Bhandari
  * @author Shikhat Karkee
  * @author Temirlan Ulugbek uulu
+ * @author Zihan Qi
+ * Assignment 1, Problem 1
+ * Created on: 2nd March, 2018
+ * Last Modified on: 4th March, 2018
+ * This class represents a pet object
  */
 
 public class Pet{

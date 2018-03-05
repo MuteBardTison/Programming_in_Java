@@ -1,13 +1,14 @@
 /**
- * This class represents a driver for pet class
- * which test the functionalities of a pet instance
- * 
- * @author Zihan Qi
  * @author Sabin Bhandari
  * @author Shikhat Karkee
  * @author Temirlan Ulugbek uulu
+ * @author Zihan Qi
+ * Assignment 1, Problem 1
+ * Created on: 2nd March, 2018
+ * Last Modified on: 4th March, 2018
+ * This class represents a driver for pet class
+ * which test the functionalities of a pet instance
  */
-
 public class PetDriver{
     /**
 	 * Tests functionalities of {@link Pet} class.

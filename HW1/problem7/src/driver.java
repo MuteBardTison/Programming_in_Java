@@ -1,9 +1,12 @@
 /**
- * This class is provides the main method to check which class sold the most cookies.
  * @author Sabin Bhandari
  * @author Shikhat Karkee
  * @author Temirlan Ulugbek uulu
  * @author Zihan Qi
+ * Assignment 1, Problem 7
+ * Created on: 2nd March, 2018
+ * Last Modified on: 4th March, 2018
+ * This class is provides the main method to check which class sold the most cookies.
  */
 import java.util.Scanner;
 
@@ -15,7 +18,7 @@ public class driver{
 	int [] readID = new int[TOTAL_SLIPS];
 	int [] readBoxes = new int[ID_RANGE];
 	/**
-	 * For reading the slips, computation and deciding the winner class.
+	 * For reading the slips and deciding the winner class.
 	 * @param args Main function
 	 */
 	public static void main(String[] args) {
@@ -47,24 +50,11 @@ public class driver{
 		System.out.println("Setting values for the slip.......\n");
 		mySlip.setValues(drive.identification_numbers, drive.number_of_boxes_sold);
 		
-		/**Using getters to read the slips*/
+		/**Using method to find the winner*/
 		System.out.println("Starting the Computations.......\n");
-		int [][] readValues = mySlip.getValues();
+		int winnerClass = mySlip.getWinner();
 		
-		/**Placing the identification number and the number of boxes in 2 different arrays*/
-		for (int counter2 = 0; counter2 < number_of_slips; counter2++){
-			int value_of_id = readValues[counter2][0];
-			int value_of_boxes = readValues[counter2][1];
-			drive.readBoxes[value_of_id-1] += value_of_boxes;
-		}
 		
-		/**Determining the winner by going through the array*/
-		int winnerClass = 0;
-		for (int counter3 = 1; counter3 < drive.ID_RANGE; counter3++){
-			if (drive.readBoxes[counter3] > drive.readBoxes[winnerClass]){
-				winnerClass = counter3;
-			}
-		}
 		System.out.println("The WINNER Class is: ");
 		System.out.print(winnerClass+1);
 		

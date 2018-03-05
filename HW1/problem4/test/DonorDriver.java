@@ -1,15 +1,15 @@
 /**
- * This class represents a driver for donor class
- * which test the functionalities of a donor instance
- * 
- * @author Zihan Qi
  * @author Sabin Bhandari
  * @author Shikhat Karkee
  * @author Temirlan Ulugbek uulu
+ * @author Zihan Qi
+ * Assignment 1, Problem 4
+ * Created on: 2nd March, 2018
+ * Last Modified on: 4th March, 2018
+ * 
+ * This class represents a driver for donor class
+ * which test the functionalities of a donor instance
  */
-
-//package test;
-//import src.Donor;
 
 public class DonorDriver{
     /**

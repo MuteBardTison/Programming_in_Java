@@ -1,15 +1,14 @@
 /**
- * This class represents a test class for DecimalPlacesPrinter class
- * which test the functionalities of a printer instance
- * 
- * @author Zihan Qi
  * @author Sabin Bhandari
  * @author Shikhat Karkee
  * @author Temirlan Ulugbek uulu
+ * @author Zihan Qi
+ * Assignment 1, Problem 2
+ * Created on: 2nd March, 2018
+ * Last Modified on: 4th March, 2018
+ * This class represents a test class for DecimalPlacesPrinter class
+ * which test the functionalities of a printer instance
  */
-
-//package test;
-//import src.DecimalPlacesPrinter;
 
 public class PrinterTest{
     /**

@@ -1,13 +1,16 @@
-import java.util.Arrays;
-
 /**
- * This class represents a Donor
- * 
- * @author Zihan Qi
  * @author Sabin Bhandari
  * @author Shikhat Karkee
  * @author Temirlan Ulugbek uulu
+ * @author Zihan Qi
+ * Assignment 1, Problem 4
+ * Created on: 2nd March, 2018
+ * Last Modified on: 4th March, 2018
+ * 
+ * This class represents a Donor
  */
+
+import java.util.Arrays;
 
 public class Donor{
     private String name;        //name of donor

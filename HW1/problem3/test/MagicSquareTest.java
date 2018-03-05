@@ -1,11 +1,14 @@
 /**
- * This class represents a test class for MagicSquareChecker class
- * which test the functionalities of a checker instance
- * 
- * @author Zihan Qi
  * @author Sabin Bhandari
  * @author Shikhat Karkee
  * @author Temirlan Ulugbek uulu
+ * @author Zihan Qi
+ * Assignment 1, Problem 3
+ * Created on: 2nd March, 2018
+ * Last Modified on: 4th March, 2018
+ * 
+ * This class represents a test class for MagicSquareChecker class
+ * which test the functionalities of a checker instance
  */
 
 import java.util.Scanner;

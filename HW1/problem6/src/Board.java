@@ -1,13 +1,15 @@
-import java.util.Scanner;
-
 /**
- * This class provides simple board class that emulates the checker board.
- * 
  * @author Sabin Bhandari
  * @author Shikhat Karkee
  * @author Temirlan Ulugbek uulu
  * @author Zihan Qi
+ * Assignment 1, Problem 6
+ * Created on: 2nd March, 2018
+ * Last Modified on: 4th March, 2018
+ * This class tests the Board class to emulate the checker .
  */
+
+import java.util.Scanner;
 
 public class Board {
 	
@@ -21,7 +23,7 @@ public class Board {
 	
 	/**
 	 * Constructor to create a Board with the passed size.
-	 * @param size 
+	 * @param size is the size of the board
 	 * 
 	 */
 	public Board(final int size){
@@ -36,8 +38,8 @@ public class Board {
 	
 	/**
 	 * Constructor to create a Board with the passed size and array.
-	 * @param size 
-	 * @param arr
+	 * @param size is the size of the board
+	 * @param arr is the passed 2d array which is copied to the square property
 	 */
 	public Board(final char[][] arr, final int size){
 		this.size = size;
@@ -51,7 +53,7 @@ public class Board {
 	
 	/**
 	 * method to check equality.
-	 * @param o
+	 * @param o is the object
 	 * 
 	 */
 	@Override
@@ -73,7 +75,7 @@ public class Board {
 	
 	/**
 	 * method to place a symbol into the Board.
-	 * @param symbol 
+	 * @param symbol is the user defined character to be filled in the board
 	 * 
 	 */
 	public void placeSymbol(char symbol){
@@ -86,8 +88,8 @@ public class Board {
 	
 	/**
 	 * method to place two symbols alternately like in checker board into the Board.
-	 * @param symbol1 
-	 * @param symbol2
+	 * @param symbol1 is the first symbol
+	 * @param symbol2 is the second symbol
 	 * 
 	 */
 	public void placeSymbols(char symbol1, char symbol2){
@@ -106,9 +108,9 @@ public class Board {
 
 	/**
 	 * method to place a symbol in specific x and y position in the Board.
-	 * @param symbol
-	 * @param posx
-	 * @param posy
+	 * @param symbol is the desired user defined symbol
+	 * @param posx is the row index
+	 * @param posy is the column index
 	 * 
 	 * @throws  ArrayIndexOutOfBoundsException if someone tries to access illegal position.
 	 */

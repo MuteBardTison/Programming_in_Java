@@ -1,14 +1,17 @@
 /**
+ * @author Sabin Bhandari
+ * @author Shikhat Karkee
+ * @author Temirlan Ulugbek uulu
+ * @author Zihan Qi
+ * Assignment 1, Problem 3
+ * Created on: 2nd March, 2018
+ * Last Modified on: 4th March, 2018
+ * 
  * This class represents a magic square
  * which is an 𝑁 × 𝑁 matrix of numbers 
  * in which every number from 1 to 𝑁^2 
  * must appear just once and every row, 
  * column and diagonal must add up to the same total
- * 
- * @author Zihan Qi
- * @author Sabin Bhandari
- * @author Shikhat Karkee
- * @author Temirlan Ulugbek uulu
  */
 
 public class MagicSquareChecker{
