@@ -1,0 +1,64 @@
+<!-- Defining the project -->
+<project name="Problem1" basedir="." default="main">
+    
+    <!-- Properties -->
+    <property name="src.dir"      value="src"/>
+    <property name="build.dir"    value="bin"/>
+    <property name="classes.dir"  value="bin/classes"/>
+    <property name="jar.dir"      value="dist"/>
+    <property name="doc.dir"      value="doc"/>
+    <property name="main-class"   value="UseAuto"/>
+    <property name="project.name" value="problem4"/>
+    
+    <!-- Initializations -->
+    <target name="init" description="Initialize">
+        <mkdir dir="${classes.dir}"/>
+        <mkdir dir="${jar.dir}"/>
+        <mkdir dir="${doc.dir}"/>
+    </target>
+    
+    <!-- Compile section -->
+    <target name="compile" description="Compiling the code" depends="init">
+        <javac srcdir="${src.dir}" destdir="${classes.dir}"/>
+    </target>
+    
+    <!-- JavaDoc section -->
+    <target name="javadocs" depends="compile">
+        <javadoc sourcepath="${src.dir}" destdir="${doc.dir}"/>
+    </target>
+    
+
+    
+    <!-- Dist section -->
+    <target name="dist" depends="compile">
+        <jar destfile="${jar.dir}/${project.name}.jar" basedir="${classes.dir}">
+            <manifest>
+                <attribute name="Main-Class" value="${main-class}"/>
+            </manifest>
+        </jar>
+    </target>
+    
+    <!-- Copy -->
+    <target name="copy" depends="compile,javadocs">
+        <copy todir="${jar.dir}">
+            <fileset dir="${doc.dir}"/>
+        </copy>
+    </target>
+
+     <!-- Run -->
+    <target name="run" depends="dist">
+        <java jar="${jar.dir}/${project.name}.jar" fork="true"/>
+    </target>
+
+    <!-- Clean -->
+    <target name="clean">
+        <delete dir="${classes.dir}"/>
+        <delete dir="${jar.dir}"/>
+        <delete dir="${doc.dir}"/>
+        <delete dir="${build.dir}"/>
+    </target>
+    
+    <!-- Main -->
+    <target name="main" depends="clean,run"/>
+
+</project>
