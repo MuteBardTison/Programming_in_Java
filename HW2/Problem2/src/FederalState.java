@@ -1,8 +1,9 @@
 /**
- * @author Sabin Bhandari
- * @author Shikhat Karkee
- * @author Temirlan Ulugbek uulu
- * @author Zihan Qi
+ * 
+ * @author Sabin Bhandari 30000374
+ * @author Shikhat Karkee 30000394
+ * @author Temirlan Ulugbek uulu 30000294
+ * @author Zihan Qi 30000612
  * Assignment 2 Problem 2
  * Created on: 18th March, 2018
  * Last Modified on: 18th March, 2018
