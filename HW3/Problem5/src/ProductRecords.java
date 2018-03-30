@@ -31,6 +31,12 @@ public class ProductRecords {
 		}
 	}
 	
+	/**
+	 * Addes the new product record into the database.
+	 * @param name name of the product to be added
+	 * @param quantity quantity of the product to be added
+	 * @param price price of the product to be added
+	 */
 	public void add(final String name, final Integer quantity, final Double price){
 		if (name.length() > 30) {
 			System.out.println("The product name must have at most 30 characters!");
@@ -42,7 +48,14 @@ public class ProductRecords {
 		}
 		putValues(name, quantity, price);
 	}
+
 	
+	/**
+	 * Modifies the existing product record in the database.
+	 * @param name name of the product to be modified
+	 * @param quantity quantity of the product to be modified
+	 * @param price price of the product to be modified
+	 */
 	public void modifyProduct(final String name, final Integer quantity, final Double price){
 		if (!nameToQuantity.containsKey(name)) {
 			System.out.println("The product cannot be modified! It does not exist in the database.");
@@ -50,12 +63,22 @@ public class ProductRecords {
 		}
 		putValues(name, quantity, price);
 	}
-	
+
+	/**
+	 * Puts the product record into the database without doing any validity checks.
+	 * @param name name of the product to be put
+	 * @param quantity quantity of the product to be put
+	 * @param price price of the product to be put
+	 */
 	private void putValues(final String name, final Integer quantity, final Double price){
 		nameToQuantity.put(name, quantity);
 		nameToPrice.put(name, price);
 	}
-	
+
+	/**
+	 * Finds and prints the existing product record from the database.
+	 * @param name name of the product to be found
+	 */
 	public void findProduct(final String name){
 		if (!nameToQuantity.containsKey(name)) {
 			System.out.println("It does not exist in the database.");
@@ -66,6 +89,10 @@ public class ProductRecords {
 		System.out.println("Product price: " + nameToPrice.get(name));
 	}
 
+	/**
+	 * restores the values from the STORAGE_FILENAME
+	 * @throws IOException if fails to close the stream
+	 */
 	@SuppressWarnings("unchecked")
 	public void restoreValues() throws IOException{
 		ObjectInputStream objstream = null;
@@ -90,6 +117,10 @@ public class ProductRecords {
 		
 	}
 	
+	/**
+	 * Save the values in the database into the file STORAGE_FILENAME
+	 * @throws IOException if fails to close the stream
+	 */
 	public void saveValues() throws IOException{
 		ObjectOutputStream objstream = null;
 		try {
