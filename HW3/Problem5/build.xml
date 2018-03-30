@@ -1,0 +1,42 @@
+<project name="Problem5">
+	<property name="srcname" value="Driver"/>
+	
+	<target name="init">
+		<mkdir dir="classes"/>
+		<mkdir dir="dist"/>
+		<mkdir dir="doc"/>
+	</target>
+	
+	<target name="compile" depends="init">
+		<javac srcdir="src" destdir="classes"/>
+	</target>
+	
+	<target name="dist" depends="compile">
+		<jar destfile="dist/${srcname}.jar" basedir="classes" manifest="src/Manifest.MF"/>
+	</target>
+	
+	<target name="run" depends="dist">
+		<java dir="dist" fork="on" jar="dist/${srcname}.jar"/>
+	</target>
+	
+	<target name="javadocs" depends="dist">
+		<javadoc destdir="doc" sourcefiles="
+                                    src/ProductRecords.java, 
+                                    src/Driver.java" defaultexcludes="no"/>
+	</target>
+	
+	<target name="copy" depends="javadocs">
+		<mkdir dir="dist/doc"/>
+		<copy todir="dist/doc">
+			<fileset dir="doc">
+				<include name="*"/>
+			</fileset>
+		</copy>
+	</target>
+	
+	<target name="clean">
+		<delete dir="classes"/>
+		<delete dir="dist"/>
+		<delete dir="doc"/>
+	</target>
+</project>

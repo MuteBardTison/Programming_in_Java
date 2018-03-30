@@ -1,0 +1,10 @@
+Goal: This project provides the main function that reads a text file and computes the relative frequency of each of the letters of the
+alphabet.
+The code can be built using the following steps in the terminal:
+    ant dist
+    cd dist
+    java -jar Frequency.jar path-of-file
+
+For the third command, you can try: java -jar Frequency.jar ../src/words.txt
+Then it will ask for a filename of a text file. So enter(words.txt already is the test file):
+    ../src/words.txt

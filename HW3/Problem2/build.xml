@@ -1,0 +1,51 @@
+<!-- Defining the project -->
+<project name="Problem2">
+
+<!-- Properties -->
+	<property name="srcname" value="Main"/>
+
+<!-- Initializations -->
+	<target name="init">
+		<mkdir dir="classes"/>
+		<mkdir dir="dist"/>
+		<mkdir dir="doc"/>
+	</target>
+
+<!-- JavaDoc section -->
+	<target name="javadocs" depends="dist">
+		<javadoc destdir="doc" sourcefiles="
+                                    src/CopyAll.java, 
+                                    src/Main.java" defaultexcludes="no"/>
+	</target>
+
+<!-- Compile section -->
+	<target name="compile" depends="init">
+		<javac srcdir="src" destdir="classes"/>
+	</target>
+
+<!-- Dist section -->
+	<target name="dist" depends="compile">
+		<jar destfile="dist/${srcname}.jar" basedir="classes" manifest="src/Manifest.MF"/>
+	</target>
+
+<!-- Run -->
+	<target name="run" depends="dist">
+		<java dir="dist" fork="on" jar="dist/${srcname}.jar"/>
+	</target>
+
+<!-- Copy -->
+	<target name="copy" depends="javadocs">
+		<mkdir dir="dist/doc"/>
+		<copy todir="dist/doc">
+			<fileset dir="doc">
+				<include name="*"/>
+			</fileset>
+		</copy>
+	</target>
+<!-- Clean -->
+	<target name="clean">
+		<delete dir="classes"/>
+		<delete dir="dist"/>
+		<delete dir="doc"/>
+	</target>
+</project>
