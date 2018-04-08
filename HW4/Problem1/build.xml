@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="Copy" basedir="." default="main">
+    <property name="src.dir"        value="src"/>
+    <property name="build.dir"      value="bin"/>
+    <property name="dist.dir"       value="${build.dir}/dist"/>
+    <property name="classes.dir"    value="${build.dir}/classes"/>
+    <property name="doc.dir"        value="doc"/>
+    <property name="main-class"     value="src.Copy"/>
+    
+    <presetdef name="javac">
+        <javac includeantruntime="false" />
+    </presetdef>
+
+    <target name="init">
+        <mkdir dir="${doc.dir}"/>
+        <mkdir dir="${classes.dir}"/>
+        <mkdir dir="${dist.dir}"/>
+    </target>
+
+    <target name="clean">
+        <delete file="${src.dir}/Copy.jar"/>
+        <delete file="${src.dir}/Copy.class"/>
+        <delete dir="${build.dir}"/>
+    </target>
+
+    <target name="compile" depends="init">
+        <javac srcdir="${src.dir}" destdir="${classes.dir}"/>
+    </target>
+
+    <target name="copydata" depends="compile">
+        <copy todir="${dist.dir}">
+            <fileset dir="${src.dir}"/>
+        </copy>
+    </target>
+
+    <target name="dist" depends="compile">
+        <jar destfile="${dist.dir}/Copy.jar" basedir="${classes.dir}">
+            <manifest>
+                <attribute name="Main-Class" value="${main-class}"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="run" depends="dist,copydata">
+        <property name="file1" value="file1.txt"/>
+        <property name="file2" value="file2.txt"/>
+        <java jar="${dist.dir}/Copy.jar" fork="true">
+            <arg value="${file1}"/>
+            <arg value="${file2}"/>
+        </java>
+    </target>
+
+    <target name="javadocs" depends="compile">
+        <javadoc destdir="${doc.dir}">
+            <fileset dir="${src.dir}"/>
+        </javadoc>
+    </target>
+
+    <target name="copyresult" depends="run">
+        <copy todir="${src.dir}">
+            <fileset dir="${dist.dir}"/>
+        </copy>
+    </target>
+
+    <target name="main" depends="javadocs,run,copyresult,clean"/>
+</project>
